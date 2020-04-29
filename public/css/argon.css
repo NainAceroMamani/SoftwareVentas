@@ -17959,3 +17959,38 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
     bottom: 0;
     height: 3px;
 }
+
+.btn-github {
+    background-color: #333333;
+    color: #fff;
+}
+
+.btn-github:hover {
+    background-color: #4c515c;
+    color: #fff;
+}
+
+.btn-facebook {
+    background-color: #415993;
+    color: #fff;
+}
+
+.btn-facebook:hover {
+    background-color: #3881C4;
+    color: #fff;
+}
+
+.btn-google {
+    background-color: #EF403B;
+    color: #fff;
+}
+
+.btn-google:hover {
+    background-color: #FE5656;
+    color: #fff;
+}
+
+.card-01 .card-body {
+    position: relative;
+    padding-top: 40px;
+}

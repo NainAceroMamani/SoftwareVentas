@@ -14,6 +14,7 @@
   <!-- Icons -->
   <link href="{{ asset('vendor/nucleo/css/nucleo.css') }}" rel="stylesheet">
   <link href="{{ asset('vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/882059baa9.js" crossorigin="anonymous"></script>
   <!-- Argon CSS -->
   <link type="text/css" href="{{ asset('css/argon.css?v=1.0.0') }}" rel="stylesheet">
 </head>
@@ -49,6 +50,12 @@
               <a class="nav-link nav-link-icon" href="{{ route('login') }}">
                 <i class="ni ni-key-25"></i>
                 <span class="nav-link-inner--text">Ingresar</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="{{ route('register') }}">
+                <i class="ni ni-key-25"></i>
+                <span class="nav-link-inner--text">Registrarse</span>
               </a>
             </li>
           </ul>
