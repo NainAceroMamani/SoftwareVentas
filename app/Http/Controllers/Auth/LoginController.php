@@ -59,7 +59,7 @@ class LoginController extends Controller
         $success = true;
         $email = $socialUser->email;
         $check = User::whereEmail($email)->first(); // SELECT TOP1 * FROM `users` WHERE email = $email
-        
+
         if($check) {
             $user=$check;
         }else{
@@ -68,7 +68,7 @@ class LoginController extends Controller
                 $user = User::create([
                     "name" => ($socialUser->name != null)? $socialUser->name : 'user',
                     "email" => $email,
-                    "role" => 'cliente'
+                    "role" => 'Cliente'
                 ]);
                 UserSocialAccount::create([
                     "user_id" => $user->id,

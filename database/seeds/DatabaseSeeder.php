@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('secret'),
             'address' => '',
             'dni' => '74575544',
-            'role' => 'cliente'
+            'role' => 'Cliente'
         ]);
 
         User::create([
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('secret'),
             'dni' => '74575544',
             'address' => '',
-            'role' => 'admin'
+            'role' => 'Admin'
         ]);
 
         factory(User::class, 500)->create();
