@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Producto;
+use App\Puesto;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,9 +18,22 @@ class DatabaseSeeder extends Seeder
             'name' => 'Nain Acero Mamani',
             'email' => 'nain.acero24@gmail.com',
             'password' => bcrypt('secret'),
-            'role' => 'Cliente'
+            'address' => '',
+            'dni' => '74575544',
+            'role' => 'cliente'
+        ]);
+
+        User::create([
+            'name' => 'Nain Acero Mamani',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('secret'),
+            'dni' => '74575544',
+            'address' => '',
+            'role' => 'admin'
         ]);
 
         factory(User::class, 500)->create();
+        factory(Puesto::class, 500)->create();
+        factory(Producto::class, 5000)->create();
     }
 }

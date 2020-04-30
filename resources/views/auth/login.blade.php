@@ -58,6 +58,7 @@
                     <small>¿Aún no te has registrado?</small>
                 </a>
             </div>
+            <hr>
           </div>
         </div>
         <div class="col-md-4">
@@ -65,21 +66,23 @@
               <div class="card-header">{{ __("Socialite") }}</div>
                 <div class="card-body" >
                 <a
-                    class="btn btn-github btn-lg btn-block" style="color:#fff !important;"
-                >
-                    {{ __("Github") }} <i class="fa fa-github" ></i>
-                </a>
-
-                <a
+                    href="{{ route('social_auth' , ['driver' => 'facebook']) }}"
                     class="btn btn-facebook btn-lg btn-block" style="color:#fff !important;"
                 >
                     {{ __("Facebook") }} <i class="fa fa-facebook"></i>
                 </a>
 
                 <a
+                    href="{{ route('social_auth' , ['driver' => 'google']) }}"
                     class="btn btn-google btn-lg btn-block" style="color:#fff !important;"
                 >
                     {{ __("Google") }} <i class="fa fa-google"></i>
+                </a>
+                <a
+                    href="{{ route('social_auth' , ['driver' => 'github']) }}"
+                    class="btn btn-github btn-lg btn-block" style="color:#fff !important;"
+                >
+                    {{ __("Github") }} <i class="fa fa-github" ></i>
                 </a>
               </div>
           </div>
