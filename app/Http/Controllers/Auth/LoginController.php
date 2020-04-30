@@ -59,7 +59,7 @@ class LoginController extends Controller
         $success = true;
         $email = $socialUser->email;
         $check = User::whereEmail($email)->first(); // SELECT TOP1 * FROM `users` WHERE email = $email
-
+        dd($socialUser);
         if($check) {
             $user=$check;
         }else{
