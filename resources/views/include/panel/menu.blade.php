@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <h6 class="navbar-heading text-muted">
-    @if (auth()->user()->role == 'Admin') Gestionar Datos
+    @if (auth()->user()->role == 'admin') Gestionar Datos
     @else Menú
     @endif
 </h6>
