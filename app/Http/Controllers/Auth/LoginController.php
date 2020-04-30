@@ -67,7 +67,7 @@ class LoginController extends Controller
             try{
                 $user = User::create([
                     "name" => ($socialUser->name != null)? $socialUser->name : 'user',
-                    "email" => $email,
+                    "email" => ($email != null)? $email : '',
                     "role" => 'Cliente'
                 ]);
                 UserSocialAccount::create([
