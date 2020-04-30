@@ -79,6 +79,12 @@
                     {{ __("Google") }} <i class="fa fa-google"></i>
                 </a>
                 <a
+                    href="{{ route('social_auth' , ['driver' => 'twitter']) }}"
+                    class="btn btn-twitter btn-lg btn-block" style="color:#fff !important;"
+                >
+                    {{ __("Twitter") }} <i class="fa fa-twitter"></i>
+                </a>
+                <a
                     href="{{ route('social_auth' , ['driver' => 'github']) }}"
                     class="btn btn-github btn-lg btn-block" style="color:#fff !important;"
                 >
