@@ -59,15 +59,20 @@ class LoginController extends Controller
         $success = true;
         $email = $socialUser->email;
         $check = User::whereEmail($email)->first(); // SELECT TOP1 * FROM `users` WHERE email = $email
-        dd($socialUser);
-        if($check) {
-            $user=$check;
+        $check_id = User::where('username', $socialUser->id)->first();
+        if($check || $check_id) {
+            if($check) {
+                $user=$check;
+            }elseif($check_id){
+                $user=$check_id;
+            }
         }else{
             \DB::beginTransaction();
             try{
                 $user = User::create([
                     "name" => ($socialUser->name != null)? $socialUser->name : 'user',
                     "email" => ($email != null)? $email : '',
+                    "username" => ($socialUser->id != null)? $socialUser->id: null,
                     "role" => 'Cliente'
                 ]);
                 UserSocialAccount::create([
