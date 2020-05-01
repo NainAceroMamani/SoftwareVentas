@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.panel')
 
 @section('content')
 <div class="card shadow">
@@ -9,7 +9,7 @@
             </div>
             <!-- Registrar Nueva Inscripción al Ciss -->
             <div class="col text-right">
-                <a href="{{ url('Admininscription/create') }}" class="btn btn-lg btn-success">{{ __('Nuevo Producto') }}</a>
+                <a href="{{ url('productos/create') }}" class="btn btn-lg btn-success">{{ __('Nuevo Producto') }}</a>
             </div>
         </div>
     </div>
@@ -46,6 +46,14 @@
                 </td>
                 <td>
                     {{ $producto->stock_prod }}
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-primary" title="Ver Producto" 
+                        href="#">Ver</a>
+                    <a class="btn btn-sm btn-success" title="Ver Productot" 
+                        href="#">Editar</a>
+                    <a class="btn btn-sm btn-danger" title="Eliminar Producto" 
+                    href="#">Cancelar</a>
                 </td>
             </tr>
         @endforeach

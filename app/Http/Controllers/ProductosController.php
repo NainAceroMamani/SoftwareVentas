@@ -15,9 +15,11 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $puesto_id = Puesto::where('user_id', auth()->user()->id)->first();         // id del puesto
-        $productos = Producto::where('puesto_id', $puesto_id->id)->paginate(10);    // filtrar por puesto_id
-        return view('productos/index', compact('productos'));
+        $puesto_id = Puesto::where('user_id', auth()->user()->id)
+                    ->first();         // id del puesto
+        $productos = Producto::where('puesto_id', $puesto_id->id)
+                    ->paginate(10);    // filtrar por puesto_id
+        return view('productos.index', compact('productos'));
     }
 
     /**
@@ -27,7 +29,9 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
+        $puesto = Puesto::where('user_id', auth()->user()->id)
+                    ->first();  // puesto
+        return view('productos/create', compact('puesto'));
     }
 
     /**
