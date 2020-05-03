@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Puesto;
+use App\Imagen;
 
 class ProductosController extends Controller
 {
@@ -42,7 +43,63 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'name_prod'     =>  'required|min:3',
+            'precio_prod'   =>  'required|regex:/^\d+(\.\d{1,2})?$/',
+            'stock_prod'    =>  'required|alpha_num',
+            'puesto_id'     =>  'required' 
+        ];
+        $this->validate($request, $rules);
+        $producto = Producto::create(
+            $request->only('name_prod', 'precio_prod', 'stock_prod', 'desc_prod', 'puesto_id')
+        );
+
+        $notification = 'El producto se creo '.$producto->name.' correctamente con id: '.$producto->id;
+        return redirect('productos/create')->with(compact('notification'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function dropzoneFrom(Request $request)
+    {
+        $files = $request->file('file');
+        $puesto = $request->input('puesto');
+        $producto = $request->input('producto');
+        foreach($files as $file){
+            $name = $file->getClientOriginalName();
+            $fileName = 'public/'.$puesto.'/'.$producto.'/'.$name;
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($fileName,  \File::get($file));
+
+            $imagen = Imagen::create(
+                [
+                    'url_imagen'    => $name,
+                    'producto_id'   => $producto 
+                ]
+            );
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function dropzonedelete(Request $request)
+    {
+        $name = $request->input('name');
+        $producto_id = $request->input('producto');
+        $puesto_id = $request->input('puesto');
+
+        $imagen = Imagen::where('producto_id', $producto_id)->where('url_imagen', $name)->delete();
+
+        $fileName = 'public/'.$puesto_id.'/'.$producto_id.'/'.$name;
+        \Storage::delete($fileName);
     }
 
     /**

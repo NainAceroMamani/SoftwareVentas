@@ -17994,3 +17994,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
     position: relative;
     padding-top: 40px;
 }
+
+.dropzone .dz-preview .dz-error-message {
+    top: 150px!important;
+}

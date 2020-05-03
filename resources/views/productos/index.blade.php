@@ -50,10 +50,10 @@
                 <td>
                     <a class="btn btn-sm btn-primary" title="Ver Producto" 
                         href="#">Ver</a>
-                    <a class="btn btn-sm btn-success" title="Ver Productot" 
+                    <a class="btn btn-sm btn-success" title="Editar Productot" 
                         href="#">Editar</a>
                     <a class="btn btn-sm btn-danger" title="Eliminar Producto" 
-                    href="#">Cancelar</a>
+                    href="#">Eliminar</a>
                 </td>
             </tr>
         @endforeach

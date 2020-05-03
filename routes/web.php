@@ -22,3 +22,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/productos', 'ProductosController');
+Route::post('/productos/dropzoneFrom', 'ProductosController@dropzoneFrom');
+Route::post('/productos/dropzonedelete', 'ProductosController@dropzonedelete');
