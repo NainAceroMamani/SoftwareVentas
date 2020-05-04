@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Producto;
 use App\Puesto;
+use App\Categoria;
+use App\Subcategoria;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,6 +32,36 @@ class DatabaseSeeder extends Seeder
             'dni' => '74575544',
             'address' => '',
             'role' => 'Admin'
+        ]);
+
+        Categoria::create([
+            'name'      =>  'Restaurantes',
+            'url_imagen'=>  'restaurantes.jpg'
+        ]);
+
+        Categoria::create([
+            'name'      =>  'Artefactos',
+            'url_imagen'=>  'artefactos.jpg'
+        ]);
+
+        Categoria::create([
+            'name'      =>  'Comida',
+            'url_imagen'=>  'comida.png'
+        ]);
+
+        Categoria::create([
+            'name'      =>  'Muebles',
+            'url_imagen'=>  'muebles.jpg'
+        ]);
+        
+        Subcategoria::create([
+            'name'          => 'Niños',
+            'categoria_id'  => '1'
+        ]);
+
+        Subcategoria::create([
+            'name'          => 'Damas',
+            'categoria_id'  => '1'
         ]);
 
         factory(User::class, 500)->create();

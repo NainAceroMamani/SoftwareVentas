@@ -1,0 +1,123 @@
+.content {
+    text-align: center;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.welcome-text {
+    color: #fff;
+    font-size: 150px;
+    font-family: 'Lobster', cursive;
+}
+
+.derecha {
+    animation: moverDerecha 2s ease-in;
+    font-family: 'Kaushan Script' !important;
+}
+
+.derecha-welcome {
+    animation: moverDerecha 2s ease-in;
+}
+
+.izquierda-welcome {
+    animation: moverIzquierda 2s ease-in;
+}
+
+@keyframes moverDerecha {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverIzquierda {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+#carrusel {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    height: 190px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#carrusel .left-arrow {
+    position: absolute;
+    left: 10px;
+    z-index: 1;
+    top: 50%;
+    margin-top: -9px;
+}
+
+#carrusel .right-arrow {
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    top: 50%;
+    margin-top: -9px;
+}
+
+.carrusel {
+    width: 4000px;
+    left: 0px;
+    position: absolute;
+    z-index: 0;
+}
+
+.carrusel>div {
+    float: left;
+    height: 203px;
+    margin-right: 5px;
+    width: 220px;
+    text-align: center;
+}
+
+.carrusel img {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .text-welcome {
+        font-size: 100px !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .text-welcome {
+        font-size: 80px !important;
+    }
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.blank {
+    color: #000;
+}

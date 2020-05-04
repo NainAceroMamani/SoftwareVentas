@@ -4,3 +4,60 @@
 @import 'variables';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+.btn-github {
+    background-color: #333333;
+    color: #fff;
+}
+
+.btn-github:hover {
+    background-color: #4c515c;
+    color: #fff;
+}
+
+.btn-facebook {
+    background-color: #415993;
+    color: #fff;
+}
+
+.btn-facebook:hover {
+    background-color: #3881C4;
+    color: #fff;
+}
+
+.btn-google {
+    background-color: #EF403B;
+    color: #fff;
+}
+
+.btn-google:hover {
+    background-color: #FE5656;
+    color: #fff;
+}
+
+.bg-purple {
+    background-color: #4b0082;
+}
+
+.text-welcome {
+    color: #fff;
+    font-size: 120px;
+    font-family: 'Anton', sans-serif;
+    margin-top: 10%;
+}
+
+.img-welcome {
+    margin: auto;
+    width: 500px;
+}
+
+.white {
+    color: #fff;
+}
+
+.textos {
+    display: block;
+    height: 450px;
+    object-fit: cover;
+    width: auto;
+    animation: moverArriva 1s ease-in;
+}
