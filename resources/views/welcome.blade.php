@@ -16,7 +16,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    <h1 class="welcome-text text-bold derecha">{{ _('FERIA TACNA') }}</h1>
+                    <h1 class="welcome-text text-bold derecha">{{ _('FERIA TACNA') }}</h1> 
                 </div>
             </div>
         </div>
