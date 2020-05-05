@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-purple p-5 " style=" width: 100%;height:100%;">
+    <div class="bg-blue p-5 " style=" width: 100%;height:100%;">
         <!-- HEADER -->
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">
@@ -38,7 +38,7 @@
                     <div class="carrusel">   
                     @foreach($categorias as $categoria)
                         <div class="product" id="product_{{$categoria->id}}">
-                            <div class="card bg-purple">
+                            <div class="card bg-blue">
                                 <div class="mb-1">
                                     <button class="btn btn-outline-light btn-lg btn-block my-2 my-sm-0" type="submit">{{ $categoria->name }}</button>
                                 </div>

@@ -16,6 +16,7 @@ class CreatePuestosTable extends Migration
         Schema::create('puestos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code', 15)->unique();
+            $table->string('description', 256);
             $table->integer('calification')->unsigned();
             $table->string('phone', 15);
 

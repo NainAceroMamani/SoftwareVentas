@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+use App\Puesto;
 
 class ViewsController extends Controller
 {
@@ -16,6 +17,13 @@ class ViewsController extends Controller
 
     public function tienda() {
         $categorias = Categoria::all();
-        return view('tienda', compact('categorias'));
+        $puestos = Puesto::paginate(12);
+        return view('tienda', compact('categorias', 'puestos'));
+    }
+
+    public function detail($id) {
+        $puesto = Puesto::where('id', $id)->first();
+        $categorias = Categoria::all();
+        return view('detail', compact('puesto', 'categorias'));
     }
 }

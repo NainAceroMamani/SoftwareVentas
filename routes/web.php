@@ -9,6 +9,7 @@ Auth::routes();
 
 Route::get('/inicio', 'ViewsController@initial');
 Route::get('/tienda', 'ViewsController@tienda');
+Route::get('/detail/{id}', 'ViewsController@detail');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/productos', 'ProductosController');

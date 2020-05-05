@@ -10091,6 +10091,10 @@ a.text-dark:focus {
     background-color: #4b0082;
 }
 
+.bg-red {
+    background-color: #8D0801;
+}
+
 .text-welcome {
     color: #fff;
     font-size: 120px;
@@ -10115,4 +10119,15 @@ a.text-dark:focus {
     width: auto;
     -webkit-animation: moverArriva 1s ease-in;
     animation: moverArriva 1s ease-in;
+}
+
+.bg-blue {
+    background-color: #001427;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #001427 !important;
+    border-color: #001427 !important;
 }
