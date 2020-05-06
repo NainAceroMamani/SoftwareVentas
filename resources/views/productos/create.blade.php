@@ -3,6 +3,7 @@
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 @endsection
 
 @section('content')
@@ -47,9 +48,9 @@
                         $number = intval(preg_replace('/[^0-9]+/', '', session('notification')), 10); 
                     @endphp
                     <form id="dropzoneFrom" method="post" action="{{ url('productos/dropzoneFrom')}}" 
-                                class="dropzone" accept-charset="UTF-8" enctype="multipart/form-data">
-                                <input type="hidden" name="puesto" value="{{ $puesto->id }}">
-                                <input type="hidden" name="producto" value="{{ $number }}">   
+                        class="dropzone" accept-charset="UTF-8" enctype="multipart/form-data">
+                        <input type="hidden" name="puesto" value="{{ $puesto->id }}">
+                        <input type="hidden" name="producto" value="{{ $number }}">   
                         @csrf
                     </form>
                 @else
@@ -89,6 +90,15 @@
                     class="form-control" placeholder="Stock del Producto" 
                     value="{{ old('stock_prod') }}" required>
                 </div>
+                <div class="form-group col-md-6">    
+                    <label for="subcategoria_id">Subcategorias *</label>
+                    <select name="subcategoria_id[]" id="subcategoria_id" class="form-control selectpicker"
+                    data-style="btn-default" multiple title="Seleccione una o varias" required>
+                    @foreach($subcategorias as $subcategoria)
+                        <option value="{{ $subcategoria->id }}">{{ $subcategoria->name }}</option>
+                    @endforeach
+                    </select>
+                </div>
             </div>
             <input type="hidden" name="puesto_id" value="{{ $puesto->id }}">
             <button type="submit" class="btn btn-primary">
@@ -105,6 +115,9 @@
 
 @section('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
+
     <script>
         Dropzone.options.dropzoneFrom = { 
         // Change following configuration below as you need there bro

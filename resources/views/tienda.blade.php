@@ -10,32 +10,41 @@
 
 @section('content')
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
-        <div class="container">
-            <a class="navbar-brand text-bold text-lg" href="#">{{ _('FERIA TACNA') }}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <hr>
-                <input class="form-control mr-sm-2" type="search" placeholder="Encuentra tu producto" aria-label="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" style="width:200px;font-size:16px" type="submit">{{ _('Solicitar Puesto') }}</button>
+    <header>
+        <div class="main-header">
+            <div class="toggle-icons open">
+                <i class="fas fa-bars"></i>
             </div>
+            <div class="toggle-icons close">
+                <i class="fas fa-times"></i>
+            </div>
+            <a href="index.html"><img src="logo.svg"></a>
+            <div class="search-box">
+                <input type="text" name="" id="" class="search-text" placeholder="Buscar Puesto">
+                <button type="submit" class="search-input"><i class="fas fa-search"></i>
+                </button>
+                <button type="reset" class="search-close"><i class="fas fa-times"></i>
+                </button>
+            </div>
+            <a href="" class="nav-a">Solicita tu Puesto</a>
         </div>
-    </nav>
+    </header>
     <!-- END HEADER -->
 
     <!-- SUBMENU -->
-    <div class="mt-0.5 navbar-dark text-light bg-blue">
-        <ul class="nav nav-pills mb-3 justify-content-center">
-            <li class="nav-item mb-2">  <a class="nav-link active active white">{{ _('Inicio') }} </a></li>
-            <li class="nav-item mb-2">  <a class="nav-link white">{{ _('Vender') }} </a></li>
-            <li class="nav-item mb-2">  <a class="nav-link white">{{ _('Recomendados') }} </a></li>
-            <li class="nav-item mb-2">  <a class="nav-link white">{{ _('Anunciar Aquí') }} </a></li>
-            <li class="nav-item mb-2">  <a class="nav-link white">{{ _('Ayuda') }} </a></li>
-            <li class="nav-item mb-2">  <a class="nav-link white">{{ _('Contáctanos') }} </a></li>
-        </ul>
+    <div class="nav-link">
+        <div class="scroll-container">
+            <nav>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Vender</a></li>
+                    <li><a href="">Recomendados</a></li>
+                    <li><a href="">Anunciar Aquí</a></li>
+                    <li><a href="">Ayuda</a></li>
+                    <li><a href="">Contáctanos</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
     <!-- END SUBMENU -->
 
@@ -114,15 +123,15 @@
     </div>  
     <!-- END PUESTOS -->
     </div>
-    </div><hr>
-
     <!-- PAGINACION -->
     <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
+        <ul class="pagination justify-content-center" style="max-width: 50%;">
             {{ $puestos->links() }}
         </ul>
     </nav><hr><br>
     <!-- END PAGINACION -->
+    </div><hr>
+
 @endsection
 
 @section('scripts')

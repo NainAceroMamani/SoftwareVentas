@@ -62,7 +62,9 @@
     </div>
     <!-- Paginación -->
     <div class="card-body">
-    {{ $productos->links() }}
+    @if(!empty($productos))
+        {{ $productos->links() }}
+    @endif
     </div>
 </div>
 @endsection

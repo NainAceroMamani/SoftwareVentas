@@ -19,6 +19,8 @@ class CreatePuestosTable extends Migration
             $table->string('description', 256);
             $table->integer('calification')->unsigned();
             $table->string('phone', 15);
+            $table->unsignedInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
 
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

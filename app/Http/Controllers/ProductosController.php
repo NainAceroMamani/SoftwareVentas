@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Producto;
 use App\Puesto;
 use App\Imagen;
+use App\Subcategoria;
+use App\Puestosubcategoria;
 
 class ProductosController extends Controller
 {
@@ -16,10 +18,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $puesto_id = Puesto::where('user_id', auth()->user()->id)
-                    ->first();         // id del puesto
-        $productos = Producto::where('puesto_id', $puesto_id->id)
-                    ->paginate(10);    // filtrar por puesto_id
+        $puesto_id = Puesto::where('user_id', auth()->user()->id)->first();         // id del puesto
+        $productos = ($puesto_id != null)? Producto::where('puesto_id', $puesto_id->id)->paginate(10): [];    // filtrar por puesto_id
+
         return view('productos.index', compact('productos'));
     }
 
@@ -30,9 +31,10 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        $puesto = Puesto::where('user_id', auth()->user()->id)
-                    ->first();  // puesto
-        return view('productos/create', compact('puesto'));
+        $puesto = Puesto::where('user_id', auth()->user()->id)->first();  // puesto
+        $subcategorias = Subcategoria::where('categoria_id', $puesto->categoria_id)->get();
+
+        return view('productos/create', compact('puesto', 'subcategorias'));
     }
 
     /**
@@ -53,6 +55,14 @@ class ProductosController extends Controller
         $producto = Producto::create(
             $request->only('name_prod', 'precio_prod', 'stock_prod', 'desc_prod', 'puesto_id')
         );
+
+        $subcategorias = $request->input('subcategoria_id');
+        foreach($subcategorias as $subcategoria) {
+            Puestosubcategoria::create([
+                'subcategoria_id' => $subcategoria,
+                'puesto_id' => 1
+            ]);
+        }
 
         $notification = 'El producto se creo '.$producto->name.' correctamente con id: '.$producto->id;
         return redirect('productos/create')->with(compact('notification'));

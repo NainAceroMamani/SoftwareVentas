@@ -13,5 +13,6 @@ $factory->define(Puesto::class, function (Faker $faker) {
         'calification'  => $faker->randomElement([1,2,3,4,5]),
         'phone'         => $faker->e164PhoneNumber,
         'user_id'       => $faker->numberBetween($min = 1, $max = 10),
+        'categoria_id'  => 1
     ];
 });

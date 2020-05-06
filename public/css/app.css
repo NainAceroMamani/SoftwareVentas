@@ -10099,7 +10099,7 @@ a.text-dark:focus {
     color: #fff;
     font-size: 120px;
     font-family: "Anton", sans-serif;
-    margin-top: 10%;
+    margin-top: 2%;
 }
 
 .img-welcome {
@@ -10130,4 +10130,22 @@ a.text-dark:focus {
     color: #fff;
     background-color: #001427 !important;
     border-color: #001427 !important;
+}
+
+.main {
+    background: rgb(118, 230, 221);
+    background: linear-gradient(90deg, rgba(118, 230, 221, 1) 0%, rgba(0, 168, 150, 1) 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 400px;
+    padding: 48px;
+    width: 100%;
+}
+
+.wave {
+    margin-top: -5px;
+    height: 100px;
+    width: 100%;
+    background: rgb(118, 230, 221);
+    background: linear-gradient(90deg, rgba(118, 230, 221, 1) 0%, rgba(0, 168, 150, 1) 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
