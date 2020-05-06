@@ -17,8 +17,7 @@
                             <div class="col-sm-6 col-md-6 col-lg-6 mt-2">
                                 <button class="btn btn-dark btn-lg btn-block my-2 my-sm-0" type="submit">{{ _('Comprador') }}</button>
                             </div>
-                        </div>
-                        <br><br>
+                        </div><br><br>
                         <h3 class="text-center mt-3 white m-auto">{{ _('Bienvenidos a la única feria virtual en Tacna') }}</h3>
                         
                     </div>

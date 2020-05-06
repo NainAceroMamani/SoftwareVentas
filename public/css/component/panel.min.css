@@ -112,9 +112,20 @@ ul {
     }
 }
 
-@media screen and (max-width: 700px) {
+.margin-text {
+    margin-top: 1%;
+}
+
+@media screen and (max-width: 600px) {
     .text-welcome {
-        font-size: 80px !important;
+        font-size: 40px !important;
+        margin-top: -8%;
+    }
+    .margin-text {
+        margin-top: -8%;
+    }
+    .main {
+        height: 520px;
     }
 }
 
